@@ -1,13 +1,10 @@
 const express = require('express');
+const tarefaController = require('../controllers/tarefaController');
 
 const app = express(); // 1
 
-app.get('/hello', handleHelloWorldRequest); // 2
+app.get('/', tarefaController); // 2
 
-app.listen(3021, () => {
-  console.log('Aplicação ouvindo na porta 3021');
+app.listen(5006, () => {
+  console.log('Aplicação ouvindo na porta 5006');
 }); // 3
-
-function handleHelloWorldRequest(req, res) {
-  res.status(200).send('Hello World!'); // 4
-}

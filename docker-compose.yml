@@ -33,7 +33,7 @@ services:
     container_name: bancodedados_mysql 
     image: mysql:8.0.21
     ports: 
-      - 3305:3306
+      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=12345
     restart: 'always'

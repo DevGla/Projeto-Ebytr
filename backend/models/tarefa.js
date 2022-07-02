@@ -11,7 +11,13 @@ const Tarefa = (sequelize, DataTypes) => {
     },
     status: {
       type: DataTypes.STRING
-    }
+    },
+    dataCriacao: {
+      type: DataTypes.DATE
+    },
+  },
+  {
+    timestamps: false
   });
 
   return Tarefa;

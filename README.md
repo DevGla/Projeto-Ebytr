@@ -13,6 +13,19 @@ Instruções para instalação:
 * `git clone git@github.com:DevGla/Projeto-Ebytr.git`
 * Este comando irá clonar o repositório para a sua maquina.
 
+
+
+
+
+
+
+cd Projeto-Ebytr
+
+
+
+
+
+
  2 – Você deverá criar todo o sistema de funcionamento da aplicação:
  
  A aplicação está estruturada no conceito de containers. Os containers são ambientes onde podemos criar uma atmosfera com todos os “programas” que precisamos para que a aplicação funcione. Atualmente são 3 containers, 1 para o FrontEnd, 1 para o BackEnd e 1 para o Banco de dados, sendo assim cada container contém o necessário(bibliotecas, programas...) para que os respectivos blocos de código funcionem.

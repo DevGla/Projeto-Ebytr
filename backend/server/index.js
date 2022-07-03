@@ -1,7 +1,10 @@
 const express = require('express');
 const tarefaController = require('../controllers/tarefaController');
+const cors = require('cors');
 
 const app = express(); // 1
+app.use(cors())
+app.use(express.json());
 
 app.get('/', tarefaController); // 2
 

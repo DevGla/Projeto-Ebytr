@@ -11,3 +11,5 @@ app.get('/', tarefaController); // 2
 app.listen(5006, () => {
   console.log('Aplicação ouvindo na porta 5006');
 }); // 3
+
+module.exports = app

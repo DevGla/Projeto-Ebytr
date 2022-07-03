@@ -17,7 +17,7 @@ function App() {
     <div>
       <h1>Lista de Tarefas</h1>
       <label htmlFor="criar-tarefa-input">
-          Criar Tarefa
+          Criar Tarefa:
           <input
             type="text"
             id="criar-tarefa-input"

@@ -10,7 +10,7 @@ Instruções para instalação:
 
 - No terminal do seu computador digite o seguinte comando:
 
-* `git clone URL`
+* `git clone git@github.com:DevGla/Projeto-Ebytr.git`
 * Este comando irá clonar o repositório para a sua maquina.
 
  2 – Você deverá criar todo o sistema de funcionamento da aplicação:

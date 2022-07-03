@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "12345",
+    "password": "12345asdasd",
     "database": "bancodedados",
     "host": "localhost",
     "dialect": "mysql"

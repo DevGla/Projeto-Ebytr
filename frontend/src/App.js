@@ -46,6 +46,7 @@ function App() {
               onChange={ ({ target }) => mudaStatus(target.value) }
               value={ status }
               >
+              {/* select com erro - ao selecionar um, armazena outro */}
               <option value="Em andamento">Em andamento</option>
               <option value="Concluída">Concluída</option>
               <option value="pendente">pendente</option>

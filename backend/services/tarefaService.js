@@ -5,4 +5,13 @@ const tarefaService = async () => {
     return getTarefa;
 };
 
-module.exports = tarefaService;
+const tarefaServicePost = async (name, dataCriacao, status) => {
+    console.log(dataCriacao);
+    const postTarefa = await Tarefa.create({ name, dataCriacao, status });
+    return postTarefa;
+}
+
+module.exports = {
+    tarefaService,
+    tarefaServicePost
+};

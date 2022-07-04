@@ -7,8 +7,14 @@ test('Testando página inicial - Texto: "Lista de Tarefas"', () => {
     expect(text).toBeInTheDocument()
 });
 
-test('Testando página inicial - Verificando input "Criar Tarefa"', () => {
+test('Testando página inicial - Verificando input "Tarefa"', () => {
   render(<App />);
-  const text = screen.getByLabelText('Criar Tarefa:');
+  const text = screen.getByText('Tarefa:');
+    expect(text).toBeInTheDocument()
+});
+
+test('Testando página inicial - Verificando input "status"', () => {
+  render(<App />);
+  const text = screen.getByText('Status:');
     expect(text).toBeInTheDocument()
 });

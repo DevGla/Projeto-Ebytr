@@ -5,7 +5,7 @@ function App() {
 
   const [ tarefaBD, setTarefaBD ] = useState([]);
   const [ tarefaValor, setTarefaValor ] = useState('');
-  const [ status, setStatus ] = useState('');
+  const [ status, setStatus ] = useState({ status: 'pendente'});
 
   const request = async () => {
     const response = await fetch('http://localhost:5006/');
@@ -18,10 +18,13 @@ function App() {
     console.log(tarefaValor);
   }
 
-  const mudaStatus = (valor) => {
-    setStatus(valor);
-    console.log(status);
-  }
+  const mudaStatus = (value) => {
+    setStatus((prevValue) => ({
+      ...prevValue,
+      [value.target.name]: value.target.value,
+    }))
+    console.log(status)
+  };
 
   useEffect(() => {request()}, []);
   
@@ -43,10 +46,8 @@ function App() {
             <select
               name="status"
               id="status-tarefa"
-              onChange={ ({ target }) => mudaStatus(target.value) }
-              value={ status }
+              onChange={ mudaStatus }
               >
-              {/* select com erro - ao selecionar um, armazena outro */}
               <option value="Em andamento">Em andamento</option>
               <option value="Concluída">Concluída</option>
               <option value="pendente">pendente</option>

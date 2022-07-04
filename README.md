@@ -7,8 +7,6 @@ Este projeto tem como Objetivo, criar uma aplicação que integra o FrontEnd ao 
 
 Esta aplicação está estruturada no conceito de containers. Os containers são ambientes onde podemos criar uma atmosfera com todos os requisitos de sistema que precisamos para que a aplicação funcione. Atualmente existem três containers, um para o FrontEnd, um para o BackEnd e um para o Banco de dados.
 
-```
-
 ### 🔧 Instalação
 
 1 – Você deve clonar o repositório
@@ -50,9 +48,6 @@ OBS: AO RODAR O COMANDO ACIMA, O TERMINAL USADO FICARÁ INDISPONÍVEL, POIS ESTA
 * `npm start`
 
 
-```
-
-
 ## ⚙️ Testes
 
 Para esta aplicação, foi usado os conceitos de testes unitários dentro do Front End, e Testes de integração para o Back End.
@@ -70,7 +65,4 @@ Dentro da pasta Back End.
 - No terminal do seu computador digite o seguinte comando: 
 
 * `npm run test`
-
-
-```
 

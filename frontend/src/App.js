@@ -54,7 +54,7 @@ function App() {
           </label>
           <button className="register-button">Criar</button>
         </label>
-          <div className="caraio2">
+          <div>
             <p>name</p>    
             <p>dataCriacao</p>    
             <p>status</p>

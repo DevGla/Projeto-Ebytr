@@ -6,7 +6,7 @@ const options = {
   username: process.env.USER,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
-  port: process.env.PORT || '5721',
+  port: process.env.PORT || '5555',
   define: {
     timestamps: false
 }

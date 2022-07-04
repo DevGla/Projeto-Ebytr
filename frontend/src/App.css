@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+  }
+
+  .app-container-bd {
+    display: flex;
+    align-items: center;
+    flex-direction: row;    
+  }
+
+  .app-container-bd-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;   
+  }
+
+   .register-container {
+    padding: 10px 20px;
+    width: max-content;
+    height: max-content;
+  
+    margin-top: 20px;
+    border: 3px solid black;
+    border-radius: 5px;
+  }
+  
+  .register-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: fantasy;
+  }
+   
+  .register-button {
+    padding: 2px 5px;
+  }
+
+  table{ /** Faz o estilo da tabela inteira. **/
+    border-color: rgb(235, 235, 242); /** Insere a borda azul. **/
+ }
+ tr{/** Faz o estilo para as linhas. **/
+    text-align: center; /** Centraliza o conteúdo. **
+    
+ }
+ th{/** Faz o estilo para as células do cabeçalho. **/
+    background: rgb(120, 118, 118); /** Muda para um fundo cinza. **/
+    color: white; /** Troca a cor da fonte para branco. **/
+ }
+ td .esquerda{ /** É feito o estilo das celulas com o auxilio de uma classe. **/
+    text-align: left; /**Alinha o texto da primeira coluna para esquerda. **/
+ }
+ td .centro{
+    text-align: center; /**Centraliza o texto. **/
+ }
+ td .direita{
+    text-align: right; /**Coloca o texto para esquerda. **/
+ }

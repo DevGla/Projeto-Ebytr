@@ -32,7 +32,7 @@ function App() {
     <div className="app-container">
       <div className="register-container">
         <h1 className="register-title">Lista de Tarefas</h1>
-        <label htmlFor="criar-tarefa-input" className="app-container-label">
+        <label htmlFor="criar-tarefa-input" className="app-container">
             Tarefa:
             <input
               type="text"
@@ -47,6 +47,7 @@ function App() {
               name="status"
               id="status-tarefa"
               onChange={ mudaStatus }
+              className=""
               >
               <option value="Em andamento">Em andamento</option>
               <option value="Concluída">Concluída</option>
@@ -55,11 +56,6 @@ function App() {
           </label>
           <button className="register-button">Criar</button>
         </label>
-          <div>
-            <p>name</p>    
-            <p>dataCriacao</p>    
-            <p>status</p>
-          </div>
           <table>
             <thead>
               <tr>
@@ -70,14 +66,12 @@ function App() {
             </thead>
             <tbody>
             {tarefaBD.length > 0 && tarefaBD.map((t) => (
-              <div>
                 <tr key={t.name} >
                   <td>{t.name}</td>
                   <td>{t.dataCriacao}</td>
                   <td>{t.status}</td>
                   <button className="register-button">Editar</button>
                 </tr>
-              </div>
               ))}
             </tbody>
           </table>

@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function App() {
 
@@ -10,12 +11,11 @@ function App() {
   const request = async () => {
     const response = await fetch('http://localhost:5006/');
     const result = await response.json();
-    setTarefaBD(result);
+    setTarefaBD(result);    
   }
 
   const mudaValor = (valor) => {
     setTarefaValor(valor);
-    console.log(tarefaValor);
   }
 
   const mudaStatus = (value) => {
@@ -23,8 +23,20 @@ function App() {
       ...prevValue,
       [value.target.name]: value.target.value,
     }))
-    console.log(status)
   };
+
+  const criarTarefa = () => {
+      axios.post('http://localhost:5006/', {
+        name: tarefaValor,
+        status: status.status,
+      }).then((res) => console.log(res));
+      return window.location.reload();    
+  }
+
+  const deleteTarefa = (id) => {
+    axios.delete(`http://localhost:5006/${id}`).then((res) => console.log(res));
+    return window.location.reload();
+  }
 
   useEffect(() => {request()}, []);
   
@@ -47,14 +59,13 @@ function App() {
               name="status"
               id="status-tarefa"
               onChange={ mudaStatus }
-              className=""
               >
+              <option value="pendente">pendente</option>
               <option value="Em andamento">Em andamento</option>
               <option value="Concluída">Concluída</option>
-              <option value="pendente">pendente</option>
             </select>
           </label>
-          <button className="register-button">Criar</button>
+          <button className="register-button" onClick={ criarTarefa }>Criar</button>
         </label>
           <table>
             <thead>
@@ -71,6 +82,7 @@ function App() {
                   <td>{t.dataCriacao}</td>
                   <td>{t.status}</td>
                   <button className="register-button">Editar</button>
+                  <button className="register-button" onClick={ deleteTarefa }>Deletar</button>
                 </tr>
               ))}
             </tbody>

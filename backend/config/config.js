@@ -1,12 +1,12 @@
-require('dotenv').config();
+const vambiente = require('dotenv').config().parsed;
 
 const options = {
   dialect: 'mysql',
-  host: process.env.HOST,
-  username: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
-  port: process.env.PORT || '5555',
+  host: vambiente.HOST,
+  username: vambiente.USER,
+  password: vambiente.PASSWORD,
+  database: vambiente.DATABASE,
+  port: vambiente.PORT || '5555',
   define: {
     timestamps: false
 }
@@ -17,4 +17,3 @@ module.exports = {
     ...options,
   },
 };
-

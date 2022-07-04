@@ -14,23 +14,37 @@ function App() {
   useEffect(() => {request()}, []);
   
   return (
-    <div>
-      <h1>Lista de Tarefas</h1>
-      <label htmlFor="criar-tarefa-input">
-          Criar Tarefa:
-          <input
-            type="text"
-            id="criar-tarefa-input"
-            name="criar-tarefa"
-          />
-        </label>
-        {tarefaBD.length > 0 && tarefaBD.map((t) => (
-          <div key={t.name}>
-            <p>{t.name}</p>
-            <p>{t.dataCriacao}</p>
-            <p>{t.status}</p>
-          </div>
-          ))}
+    <div className="app-container">
+      <div className="geral">
+        <h1>Lista de Tarefas</h1>
+        <label htmlFor="criar-tarefa-input">
+            Criar Tarefa:
+            <input
+              type="text"
+              id="criar-tarefa-input"
+              name="criar-tarefa"
+              className="input-tarefa"
+            />
+          </label>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>dataCriacao</th>
+                <th>status</th>
+              </tr>
+            </thead>
+            <tbody>
+            {tarefaBD.length > 0 && tarefaBD.map((t) => (
+              <tr key={t.name}>
+                <td>{t.name}</td>
+                <td>{t.dataCriacao}</td>
+                <td>{t.status}</td>
+              </tr>
+              ))}
+            </tbody>
+          </table>
+      </div>      
     </div>
   );
 }

@@ -38,3 +38,38 @@ describe('Testando a rota GET', () => {
         );
     })
 })
+
+describe('Testando a rota POST', () => {
+
+    before(() => {
+        sinon.stub(Tarefa,'create').resolves([{
+            id: 1,
+            name: 'cozinhar',
+            dataCriacao: '20/04/2022',
+            status: 'pendente',
+        }]);
+    })
+
+    after(() => {
+        Tarefa.create.restore();
+    })
+
+    it('A requisição retorna um status 200', async () => {
+        const response = await chai.request(app).post("/").send({
+        name: 'lavar carro',
+        status: 'pendente'
+      });
+
+    expect(response).to.have.status(201);
+    })
+
+    it('A requisição retorna um Objeto com id, name, dataCriacao, status', async () => {
+        const response = await chai.request(app).post('/');
+        expect(response.body[0]).to.be.includes.all.keys(
+            'id',
+            'name',
+            'dataCriacao',
+            'status'
+        );
+    })
+})

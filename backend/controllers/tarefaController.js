@@ -23,7 +23,19 @@ const tarefaControllerPost = async (req, res) => {
     }
 }
 
+const tarefaControllerDelete = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const resultServiceDelete = await tarefaService.tarefaServiceDelete(id);
+        return res.status(202).json(resultServiceDelete);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("deu ruim rota-delete")
+    }
+}
+
 module.exports = {
     tarefaController,
-    tarefaControllerPost
+    tarefaControllerPost,
+    tarefaControllerDelete
 };

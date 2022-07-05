@@ -29,8 +29,8 @@ function App() {
       axios.post('http://localhost:5006/', {
         name: tarefaValor,
         status: status.status,
-      }).then((res) => console.log(res));
-      return window.location.reload();    
+      }).then((res) => console.log(res)); 
+      return window.location.reload();  
   }
 
   const deleteTarefa = (id) => {
@@ -82,7 +82,7 @@ function App() {
                   <td>{t.dataCriacao}</td>
                   <td>{t.status}</td>
                   <button className="register-button">Editar</button>
-                  <button className="register-button" onClick={ deleteTarefa }>Deletar</button>
+                  <button className="register-button" onClick={ () => deleteTarefa(t.id) }>Deletar</button>
                 </tr>
               ))}
             </tbody>
